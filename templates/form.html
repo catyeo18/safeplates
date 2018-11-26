@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Enter your dietary restrictions</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+        <!-- TODO -->
+
+        <div class="form-group">
+            <label for="diet">Dietary Restrictions</label>
+            <select multiple class="form-control" id="diet">
+                <option>Soy</option>
+                <option>Dairy</option>
+                <option>Gluten</option>
+                <option>Peanuts</option>
+                <option>Fish</option>
+                <option>Meat</option>
+            </select>
+        </div>
+        <input type="text" class="form-control" name="location" placeholder="Location"><br>
+        <div class="form-inline">
+                 <label for="radius">Within </label>
+                 <div class="ml-1" style="width: 10px;"></div>
+                <input type="number" class="form-control" name="radius" placeholder="#">
+                <div class="ml-1" style="width: 10px;"></div>
+                <label for="radius"> miles</label>
+        </div>
+        <br>
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('input[name="location"]').value) {
+                alert('You must provide your location!');
+                return false;
+            }
+            return true;
+        };
+    </script>
+
+{% endblock %}
