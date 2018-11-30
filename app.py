@@ -4,12 +4,14 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+from helpers import returnSoup
+
 app = Flask(__name__)
 
 url = 'https://api.foursquare.com/v2/venues/explore'
 
 
-browser = webdriver.Chrome()
+# browser = webdriver.Chrome()
 
 @app.route("/", methods=["GET"])
 def get_form():
@@ -54,16 +56,18 @@ def post_form():
     try:
       # grabs URL of restaurant if possible
       link = data['response']['groups'][0]['items'][i]['venue']['delivery']['url']
-      print(link)
-      # query the website and return the html to the variable html
-      #page = requests.get(link, timeout=5)
-      browser.get(link)
-      # time.sleep(10) # doesn't work
-      browser.implicitly_wait(30)
-      # parse the html using beautiful soup and store in variable `soup`
-      soup = BeautifulSoup(browser.page_source, 'html.parser')
-      # print("Soup")
-      print(soup)
+      print("hello")
+      soup = returnSoup(link)
+      # print(link)
+      # # query the website and return the html to the variable html
+      # #page = requests.get(link, timeout=5)
+      # browser.get(link)
+      # # time.sleep(10) # doesn't work
+      # browser.implicitly_wait(30)
+      # # parse the html using beautiful soup and store in variable `soup`
+      # soup = BeautifulSoup(browser.page_source, 'html.parser')
+      # # print("Soup")
+      # print(soup)
       # diet = request.form.get("diet")
       if "grubhub" in link:
         print(soup.find_all("p"))
