@@ -65,15 +65,18 @@ def post_form():
       pagecontent = browser.execute_script("return document.body.innerHTML")
       # parse the html using beautiful soup and store in variable `soup`
       soup = BeautifulSoup(pagecontent, 'html.parser')
-      diet = request.form.get("diet")
-      for j in soup.find_all("p"):
-        print(j)
-        #print(j.text.strip.split)
-        """if diet[0] not in i.text.strip.split:
-          try:
-            restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
-          except:
-            print(i)"""
+      # diet = request.form.get("diet")
+      if "grubhub" in link:
+        for j in soup.find_all("p"):
+          print(j)
+          #print(j.text.strip.split)
+          """if diet[0] not in i.text.strip.split:
+            try:
+              restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
+            except:
+              print(i)"""
+      if "seamless" in link:
+        print("do something here")
     except:
       print(i)
 
