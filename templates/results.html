@@ -1,13 +1,27 @@
 {% extends "layout.html" %}
 
 {% block main %}
-    <h1>Here are some restaurants you might like to try</h1>
+    <div class="jumbotron text-center banner">
+        <h1><b>SafePlates</b></h1>
+        <p> Created by: Catherine Yeo, Hannah Cole || 2018 CS50 Final Project  </p>
+    </div>
 
+    <h4 class="mb-3">Here are some restaurants you might like to try! </h4>
+
+    <table style="width:100%">
+        <tr>
+          <th> Restaurant </th>
+          <th> Address </th>
+          <th> Cuisine </th>
+          <th> Suitable Menu Items </th>
+        </tr>
         {% for result in results %}
-            <div class="container">
-                <p></p>
-              <!-- Content here -->
-            </div>
+        <tr>
+          <td> {{ result["name"] }} </td>
+          <td> {{ result["location"]["address"] }}, {{ result["location"]["city"] }}, {{ result["location"]["state"] }} {{ result["location"]["postalCode"] }} </td>
+          <td> {{ result["categories"][0]["shortName"] }} </td>
+          <td> Menu Item </td>
+        </tr>
         {% endfor %}
     </table>
 
