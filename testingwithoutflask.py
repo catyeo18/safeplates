@@ -1,7 +1,10 @@
+from flask import Flask, render_template, request
 from selenium import webdriver
 import requests
 from bs4 import BeautifulSoup
 import json, requests
+
+app = Flask(__name__)
 
 # url = 'https://api.foursquare.com/v2/venues/explore'
 link = 'https://www.grubhub.com/restaurant/sam-lagrassas-44-province-st-boston/68003?affiliate=1131&utm_source=foursquare-affiliate-network&utm_medium=affiliate&utm_campaign=1131&utm_content=68003'
@@ -29,3 +32,6 @@ print(soup)
     #   except:
     #     print(i)
 
+
+if __name__ == '__main__':
+    app.run()
