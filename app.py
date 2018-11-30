@@ -6,16 +6,10 @@ import json
 
 app = Flask(__name__)
 
-import json, requests
 url = 'https://api.foursquare.com/v2/venues/explore'
-browser = webdriver.PhantomJS()
+browser = webdriver.Chrome()
 
-@app.route('/')
-def hello():
-    return render_template("form.html")
-
-
-@app.route("/form", methods=["GET"])
+@app.route("/", methods=["GET"])
 def get_form():
     return render_template("form.html")
 
@@ -69,9 +63,9 @@ def post_form():
       # print(soup)
       # diet = request.form.get("diet")
       if "grubhub" in link:
-        # print(soup.find_all("p"))
-        for j in soup.find_all("meta"):
-          print(j)
+        print(soup.find_all("p"))
+        # for j in soup.find_all("meta"):
+        #   print(j)
           #print(j.text.strip.split)
           # if diet[0] not in i.text.strip.split:
           #   try:
