@@ -2,35 +2,41 @@
 
 {% block main %}
 
-    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
-    <h1 class="mb-3">Enter your dietary restrictions</h1>
+    <div class="jumbotron text-center banner">
+        <h1><b>SafePlates</b></h1>
+        <p> Created by: Catherine Yeo, Hannah Cole || 2018 CS50 Final Project  </p>
+    </div>
 
-    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <h4 class="mb-3">To provide you the most suitable restaurant recommendations, please enter the following information below.</h4>
+
     <form action="/form" method="post">
-        <!-- TODO -->
 
-        <div class="form-group">
-            <label for="diet">Dietary Restrictions</label>
-            <select multiple class="form-control" id="diet">
-                <option>Soy</option>
-                <option>Dairy</option>
-                <option>Gluten</option>
-                <option>Peanuts</option>
-                <option>Fish</option>
-                <option>Meat</option>
-            </select>
+        <label for="diet"><h5>Dietary Restrictions:</h5></label>
+        <p>Select any of the following that applies to you.</p>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="vegetarian">I am vegetarian</input> <br>
+            <input class="form-check-input" type="checkbox" name="soy">I cannot eat soy</input> <br>
+            <input class="form-check-input" type="checkbox" name="dairy">I cannot eat dairy</input> <br>
+            <input class="form-check-input" type="checkbox" name="gluten">I cannot eat gluten</input> <br>
+            <input class="form-check-input" type="checkbox" name="peanuts">I cannot eat peanuts</input> <br>
+            <input class="form-check-input" type="checkbox" name="beef">I cannot eat beef</input> <br>
+            <input class="form-check-input" type="checkbox" name="pork">I cannot eat pork</input> <br>
         </div>
-        <input type="text" class="form-control" name="location" placeholder="Location"><br>
+        <br>
+
+        <h5>Location:</h5>
+        <input type="text" class="form-control" name="location" placeholder="Please enter your address, city, or zip code."><br>
+        <h5>Preferred Restaurant Proximity:</h5>
         <div class="form-inline">
-                 <label for="radius">Within </label>
-                 <div class="ml-1" style="width: 10px;"></div>
+                <label for="radius">Within </label>
+                <div class="ml-1" style="width: 10px;"></div>
                 <input type="number" class="form-control" name="radius" placeholder="#">
                 <div class="ml-1" style="width: 10px;"></div>
                 <label for="radius"> miles</label>
         </div>
         <br>
         <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-color" type="submit">Submit</button>
 
     </form>
 
@@ -38,6 +44,10 @@
         document.querySelector('form').onsubmit = function() {
             if (!document.querySelector('input[name="location"]').value) {
                 alert('You must provide your location!');
+                return false;
+            }
+            if (!document.querySelector('input[name="radius"]').value) {
+                alert('You must provide your preferred restaurant proximity!');
                 return false;
             }
             return true;
