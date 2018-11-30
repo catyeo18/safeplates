@@ -11,5 +11,6 @@ def returnSoup(link):
 	# parse the html using beautiful soup and store in variable `soup`
 	soup = BeautifulSoup(browser.page_source, 'html.parser')
 	
-	print(soup)
+	# browser.quit() 
+	# print(soup)
 	return soup

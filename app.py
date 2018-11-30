@@ -10,7 +10,6 @@ app = Flask(__name__)
 
 url = 'https://api.foursquare.com/v2/venues/explore'
 
-
 # browser = webdriver.Chrome()
 
 @app.route("/", methods=["GET"])
@@ -19,7 +18,7 @@ def get_form():
 
 @app.route("/form", methods=["POST"])
 def post_form():
-  number_of_recs = 2
+  number_of_recs = 10
 
   params = dict(
     client_id='F22SZ5OH34NV0ETPBQCJ33UIJGFMDWNMTI0MVUABYPJECIBW',
@@ -56,23 +55,14 @@ def post_form():
     try:
       # grabs URL of restaurant if possible
       link = data['response']['groups'][0]['items'][i]['venue']['delivery']['url']
-      print("hello")
+
+      # parse the html using helper function and store in vcariable `soup`
       soup = returnSoup(link)
-      # print(link)
-      # # query the website and return the html to the variable html
-      # #page = requests.get(link, timeout=5)
-      # browser.get(link)
-      # # time.sleep(10) # doesn't work
-      # browser.implicitly_wait(30)
-      # # parse the html using beautiful soup and store in variable `soup`
-      # soup = BeautifulSoup(browser.page_source, 'html.parser')
-      # # print("Soup")
-      # print(soup)
-      # diet = request.form.get("diet")
+
       if "grubhub" in link:
         print(soup.find_all("p"))
-        # for j in soup.find_all("meta"):
-        #   print(j)
+        for j in soup.find_all("p"):
+          print(j)
           #print(j.text.strip.split)
           # if diet[0] not in i.text.strip.split:
           #   try:
