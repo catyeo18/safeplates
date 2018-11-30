@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 import json, requests
 url = 'https://api.foursquare.com/v2/venues/explore'
-browser = webdriver.Chrome()
+browser = webdriver.PhantomJS()
 
 @app.route('/')
 def hello():
@@ -21,7 +21,7 @@ def get_form():
 
 @app.route("/form", methods=["POST"])
 def post_form():
-  number_of_recs = 100
+  number_of_recs = 10
 
   params = dict(
     client_id='F22SZ5OH34NV0ETPBQCJ33UIJGFMDWNMTI0MVUABYPJECIBW',
@@ -61,20 +61,23 @@ def post_form():
       print(link)
       # query the website and return the html to the variable html
       #page = requests.get(link, timeout=5)
+      browser.implicitly_wait(30)
       browser.get(link)
       # parse the html using beautiful soup and store in variable `soup`
       soup = BeautifulSoup(browser.page_source, 'html.parser')
-      print("HEYY THERE")
+      # print("Soup")
+      # print(soup)
       # diet = request.form.get("diet")
       if "grubhub" in link:
-        for j in soup.find_all("p"):
+        # print(soup.find_all("p"))
+        for j in soup.find_all("meta"):
           print(j)
           #print(j.text.strip.split)
-          """if diet[0] not in i.text.strip.split:
-            try:
-              restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
-            except:
-              print(i)"""
+          # if diet[0] not in i.text.strip.split:
+          #   try:
+          #     restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
+          #   except:
+          #     print(i)
       if "seamless" in link:
         print("do something here")
     except:
