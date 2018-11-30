@@ -62,9 +62,9 @@ def post_form():
       # query the website and return the html to the variable html
       #page = requests.get(link, timeout=5)
       browser.get(link)
-      pagecontent = browser.execute_script("return document.body.innerHTML")
       # parse the html using beautiful soup and store in variable `soup`
-      soup = BeautifulSoup(pagecontent, 'html.parser')
+      soup = BeautifulSoup(browser.page_source, 'html.parser')
+      print("HEYY THERE")
       # diet = request.form.get("diet")
       if "grubhub" in link:
         for j in soup.find_all("p"):
