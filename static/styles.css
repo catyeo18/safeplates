@@ -1,9 +1,35 @@
-/* TODO */
-
 .form-control {
-    width: 50%;
+    width: 80%;
 }
-
 .form-row {
-    width: 50%;
+    width: 80%;
+}
+.banner {
+    background-color: #5aaa5f;
+    color: white;
+}
+.btn-color {
+    background-color: #5aaa5f;
+    border-color: #5aaa5f;
+    color: white;
+}
+table
+{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th
+{
+    width: 25%;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even)
+{
+    background-color: #dddddd;
+}
+tr:nth-child(odd)
+{
+    background-color: white;
 }
