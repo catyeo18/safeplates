@@ -17,10 +17,10 @@
         </tr>
         {% for result in results %}
         <tr>
-          <td> {{ result["name"] }} </td>
-          <td> {{ result["location"]["address"] }}, {{ result["location"]["city"] }}, {{ result["location"]["state"] }} {{ result["location"]["postalCode"] }} </td>
-          <td> {{ result["categories"][0]["shortName"] }} </td>
-          <td> Menu Item </td>
+          <td> {{ result[0]["name"] }} </td>
+          <td> {{ result[0]["location"]["address"] }}, {{ result[0]["location"]["city"] }}, {{ result[0]["location"]["state"] }} {{ result[0]["location"]["postalCode"] }} </td>
+          <td> {{ result[0]["categories"][0]["shortName"] }} </td>
+          <td> {{ result[1] }} </td>
         </tr>
         {% endfor %}
     </table>

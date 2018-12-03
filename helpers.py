@@ -10,7 +10,7 @@ def returnSoup(link):
 	browser = webdriver.Chrome(chrome_options=options)
 
 	browser.get(link)
-	browser.implicitly_wait(30)
+	browser.implicitly_wait(50)
 
 	# parse the html using beautiful soup and store in variable `soup`
 	soup = BeautifulSoup(browser.page_source, 'html.parser')

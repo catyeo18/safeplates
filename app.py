@@ -103,14 +103,14 @@ def post_form():
   #return json.dumps(data)
   restaurant_recs = goodRestaurants(restaurants, user_restrictions)
   # goodRestaurants(restaurants, user_restrictions)
-  for item in restaurant_recs:
-    print(item[0])
-    print("==========")
-    print(item[1])
-    print(len(item))
+  # for item in restaurant_recs:
+  #   print(item[0])
+  #   print("==========")
+  #   print(item[1])
+  #   print(len(item))
     
-  return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
-  # return render_template("results.html", results=restaurant_recs)
+  # return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
+  return render_template("results.html", results=restaurant_recs)
 
 
 if __name__ == '__main__':
