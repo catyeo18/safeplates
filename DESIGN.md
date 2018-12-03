@@ -1,8 +1,10 @@
 # Safeplates
 2018 Harvard CS50 Final Project: Catherine Yeo and Hannah Cole
 
+## What Is Safeplates?
+For individuals who have specific dietary restrictions, it is often difficult to find restaurants to go to that have available menu options that satisfy those restrictions. We created Safeplates to solve that problem.
 
-**Safeplates** is a web app that gives local restaurant recommendations based on the dietary restrictions a user inputs.
+**Safeplates** is a web app that gives local restaurant recommendations based on the dietary restrictions a user inputs. For example, if Alice can’t eat soy, the app would parse the menus of an inputted region's restaurants (of a specified radius) to determine which restaurants have the most soy-free options. 
 
 ## Design
 
