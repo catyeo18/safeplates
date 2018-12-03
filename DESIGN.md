@@ -28,6 +28,8 @@ The user begins by going to the form to which he/she can input dietary restricti
 
 ### Design Decisions
 
+#### API
+
 #### Flask
 
 #### Web Scraping
