@@ -44,7 +44,7 @@ def post_form():
   all_restrictions = {
    'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb"]),
    'soy':set(["soy", "soya", "edamame", "shoyu", "tofu", "tempeh", "miso"]),
-   'dairy':set(["milk", "cheese", "cream", "cheddar", "brie", "parmesan", "mozzarella", "butter", "lactose", "pudding", "dairy"]),
+   'dairy':set(["milk", "cheese", "cream", "cheddar", "brie", "parmesan", "mozzarella", "butter", "lactose", "pudding", "dairy", "yogurt", "yoghurt"]),
    'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers"]),
    'peanuts':set(["peanut", "peanuts"]),
    'beef':set(["beef", "steak"]),
@@ -62,17 +62,18 @@ def post_form():
     try:
       # grabs URL of restaurant if possible
       link = data['response']['groups'][0]['items'][i]['venue']['delivery']['url']
+      print(link)
 
       # parse the html using helper function and store in vcariable `soup`
       soup = returnSoup(link)
 
       items = {}
-      if "grubhub" in link:
+      if "grubhub" in link or "seamless" in link:
         
-        for item in soup.find_all("div", attrs={'class':'menuItemNew'}):
-          ingredients = item.find_next("p", attrs={'itemprop': 'description'}).text
-          name = item.find_next("h6", attrs={'class':'menuItem-name'}).text
-          items[ingredients + name] = name 
+        for itemName in soup.find_all("h6", attrs={'class':'menuItem-name'}):
+          ingredients = itemName.find_next("p", attrs={'itemprop': 'description'}).text
+          items[ingredients + itemName.text] = itemName.text
+          #+ itemName.text
           #if user_restrictions.isdisjoint(ingredientsSet):
           #   print("hey")
           #   print("You can eat" + item.find_next("h6", attrs={'class':'menuItem-name'}))
@@ -86,8 +87,7 @@ def post_form():
           #   except:
           #     print(i)
       restaurants.append((data['response']['groups'][0]['items'][i]['venue'], items))
-      if "seamless" in link:
-        print("do something here")
+
     except:
       print(i)
 
@@ -101,15 +101,16 @@ def post_form():
 
 
   #return json.dumps(data)
-  restaurant_recs = goodRestaurants(restaurants, user_restrictions)
+  # restaurant_recs = goodRestaurants(restaurants, user_restrictions)
+  goodRestaurants(restaurants, user_restrictions)
   # for item in restaurant_recs:
   #   print(item[0])
   #   print("==========")
   #   print(item[1])
   #   print(len(item))
     
-  # return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
-  return render_template("results.html", results=restaurant_recs)
+  return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
+  # return render_template("results.html", results=restaurant_recs)
 
 
 if __name__ == '__main__':
