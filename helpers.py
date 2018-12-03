@@ -24,13 +24,15 @@ def goodRestaurants(restaurants, user_restrictions):
 	safeRestaurants = []
 	for restaurant in restaurants:
 		safeItems = [restaurant[1][item] for item in restaurant[1] if safeFood(item, user_restrictions)]
-		print(safeItems)
+		# print(safeItems)
 		if safeItems:
-			print(restaurant[0]["name"])
+			# print(restaurant[0]["name"])
 			safeRestaurants.append((restaurant[0], safeItems))
-	for restaurant in safeRestaurants:
-			for item in restaurant[1]:
-				print("You can eat " + item + " from " + restaurant[0]["name"])
+	# for restaurant in safeRestaurants:
+	# 		for item in restaurant[1]:
+	# 			print("You can eat " + item + " from " + restaurant[0]["name"])
+
+	return safeRestaurants
 		
 def safeFood(item, user_restrictions):
 	return reduce(lambda x, y: x and (y not in item.lower()), user_restrictions, True)
