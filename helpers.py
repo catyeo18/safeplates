@@ -20,5 +20,6 @@ def goodRestaurants(restaurants, user_restrictions):
 	goodRestaurants = []
 	for restaurant in restaurants:
 		for item in restaurant[1]:
-			if user_restrictions.isdisjoint(set(item.strip().split())):
+			safe = reduce(lambda x, y: x and (y not in item.lower()), user_restrictions, True)
+			if safe:
 				print("You can eat " + restaurant[1][item])

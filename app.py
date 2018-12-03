@@ -44,7 +44,7 @@ def post_form():
   all_restrictions = {
    'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb"]),
    'soy':set(["soy", "soya", "edamame", "shoyu", "tofu", "tempeh", "miso"]),
-   'dairy':set(["milk", "cheese", "cream", "cheddar", "brie", "parmesan", "butter", "lactose", "pudding", "dairy"]),
+   'dairy':set(["milk", "cheese", "cream", "cheddar", "brie", "parmesan", "mozzarella", "butter", "lactose", "pudding", "dairy"]),
    'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers"]),
    'peanuts':set(["peanut", "peanuts"]),
    'beef':set(["beef", "steak"]),
