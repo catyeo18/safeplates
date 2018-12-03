@@ -26,7 +26,11 @@ This web app is built and hosted locally. It uses [Foursquare](https://developer
 * Jinja
 
 ### Detailed Walkthrough
-The user begins by going to the form to which he/she can input dietary restrictions, location, and preferred radius.
+The user begins by going to the form to which he/she can input dietary restrictions, location, and preferred radius. The dietary restrictions are selected through a list of checkboxes, so the user can check all that apply. The location input can take in an address, city, and/or zip code. 
+
+Then, the user clicks the 'Submit' button to submit the form. Once that happens, the web app uses the inputted location and radius to access a list of restaurants given by Foursquare's API in JSON. The API provides us with information like name, cuisine, address, menu link, etc. It also stores the user's dietary restrictions in a set.
+
+We iterate through that list of restaurants to look for the URLs of the restaurants' menus. Once the URL is found, the HTML is parsed and returned using the helper function `returnSoup` in `helpers.py`, which utilizes BeautifulSoup, Headless, and Selenium to scrape the webpage. Now, we look for specific HTML tags/attributes within that block of scraped HTML. Every menu item is embedded within HTML tags with class `menuItem-name`, so we iterate through the menu items to store its ingredients, which all have `itemprop` labelled with `description`, in a dictionary `items` with the key being the menu item name and the value being its ingredients. We append a tuple of the restaurant's info grabbed from Foursquare's API with `items`.
 
 ### Design Decisions
 
