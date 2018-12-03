@@ -23,7 +23,13 @@ def returnSoup(link):
 def goodRestaurants(restaurants, user_restrictions):
 	goodRestaurants = []
 	for restaurant in restaurants:
+		safe = False
 		for item in restaurant[1]:
 			safe = reduce(lambda x, y: x and (y not in item.lower()), user_restrictions, True)
 			if safe:
 				print("You can eat " + restaurant[1][item])
+		
+		if safe:
+			goodRestaurants.append(restaurant)
+
+	return goodRestaurants

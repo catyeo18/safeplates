@@ -23,7 +23,7 @@ def post_form():
   params = dict(
     client_id='F22SZ5OH34NV0ETPBQCJ33UIJGFMDWNMTI0MVUABYPJECIBW',
     client_secret='GTWA3CFSP1Y5PMUNJTWKFOS3QJELCNHRMBOASKL4UDGKYJAK',
-    v='20181118',
+    v='20181203',
     suggestedRadius= request.form.get("radius"),
     near=request.form.get("location"),
     query="restaurant",
@@ -101,8 +101,15 @@ def post_form():
 
 
   #return json.dumps(data)
-  goodRestaurants(restaurants, user_restrictions)
-  return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
+  restaurant_recs = goodRestaurants(restaurants, user_restrictions)
+  # for item in restaurant_recs:
+  #   print(item[0])
+  #   print("==========")
+  #   print(item[1])
+  #   print(len(item))
+    
+  # return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
+  return render_template("results.html", results=restaurant_recs)
 
 
 if __name__ == '__main__':
