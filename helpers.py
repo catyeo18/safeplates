@@ -3,10 +3,7 @@ from bs4 import BeautifulSoup
 
 def returnSoup(link):
 	print("Entered function")
-	
-	options = webdriver.ChromeOptions()
-	options.add_argument('headless')
-	browser = webdriver.Chrome(chrome_options=options)
+	browser = webdriver.Chrome()
 
 	browser.get(link)
 	browser.implicitly_wait(30)

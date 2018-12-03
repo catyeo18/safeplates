@@ -1,20 +1,70 @@
-[INFO  - 2018-12-03T03:52:44.711Z] GhostDriver - Main - running on port 62675
-[INFO  - 2018-12-03T03:52:45.332Z] Session [e48209f0-f6ae-11e8-9eba-8b3282ad9c14] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2018-12-03T03:52:45.332Z] Session [e48209f0-f6ae-11e8-9eba-8b3282ad9c14] - page.customHeaders:  - {}
-[INFO  - 2018-12-03T03:52:45.332Z] Session [e48209f0-f6ae-11e8-9eba-8b3282ad9c14] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2018-12-03T03:52:45.332Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: e48209f0-f6ae-11e8-9eba-8b3282ad9c14
-[ERROR - 2018-12-03T03:52:45.675Z] Session [e48209f0-f6ae-11e8-9eba-8b3282ad9c14] - page.onError - msg: ReferenceError: Can't find variable: Promise
+[INFO  - 2018-11-30T04:06:45.281Z] GhostDriver - Main - running on port 49250
+[INFO  - 2018-11-30T04:06:45.701Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-11-30T04:06:45.701Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.customHeaders:  - {}
+[INFO  - 2018-11-30T04:06:45.701Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-11-30T04:06:45.701Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 5a2aec00-f455-11e8-a36c-991ed74e47d3
+[ERROR - 2018-11-30T04:06:50.417Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - msg: ReferenceError: Can't find variable: Promise
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2018-12-03T03:52:45.675Z] Session [e48209f0-f6ae-11e8-9eba-8b3282ad9c14] - page.onError - stack:
-  (anonymous function) (https://assets.grubhub.com/js/vendor-4d0ba865139a07b5cfc4.js:1)
-  (anonymous function) (https://assets.grubhub.com/js/vendor-4d0ba865139a07b5cfc4.js:1)
-  s (https://assets.grubhub.com/js/main-4d0ba865139a07b5cfc4.js:1)
-  (anonymous function) (https://assets.grubhub.com/js/vendor-4d0ba865139a07b5cfc4.js:1)
-  s (https://assets.grubhub.com/js/main-4d0ba865139a07b5cfc4.js:1)
-  (anonymous function) (https://assets.grubhub.com/js/main-4d0ba865139a07b5cfc4.js:1)
-  s (https://assets.grubhub.com/js/main-4d0ba865139a07b5cfc4.js:1)
-  n (https://assets.grubhub.com/js/main-4d0ba865139a07b5cfc4.js:1)
-  (anonymous function) (https://assets.grubhub.com/js/main-4d0ba865139a07b5cfc4.js:1)
+[ERROR - 2018-11-30T04:06:50.417Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - stack:
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  n (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
 
   phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-11-30T04:06:50.614Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - msg: ReferenceError: Can't find variable: Promise
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-11-30T04:06:50.614Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - stack:
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  n (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-11-30T04:11:45.577Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2018-11-30T04:14:03.528Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - msg: ReferenceError: Can't find variable: Promise
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-11-30T04:14:03.530Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - stack:
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  n (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-11-30T04:14:03.577Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - msg: ReferenceError: Can't find variable: Promise
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-11-30T04:14:03.577Z] Session [5a2aec00-f455-11e8-a36c-991ed74e47d3] - page.onError - stack:
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/vendor-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  s (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  n (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+  (anonymous function) (https://assets.grubhub.com/js/main-5ab7de6d6c05859b2f38.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-11-30T04:16:45.597Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2018-11-30T04:21:45.608Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2018-11-30T04:26:45.621Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2018-11-30T04:31:45.630Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
