@@ -72,7 +72,7 @@ def post_form():
         for item in soup.find_all("div", attrs={'class':'menuItemNew'}):
           ingredients = item.find_next("p", attrs={'itemprop': 'description'}).text
           name = item.find_next("h6", attrs={'class':'menuItem-name'}).text
-          items[ingredients] = name 
+          items[ingredients + name] = name 
           #if user_restrictions.isdisjoint(ingredientsSet):
           #   print("hey")
           #   print("You can eat" + item.find_next("h6", attrs={'class':'menuItem-name'}))
