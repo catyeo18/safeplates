@@ -13,6 +13,7 @@ Clone this repository locally.
 
 ### Step 2:
 In Terminal, enter the directory to which this repository is cloned. 
+Then, enter the directory `safeplates`.
 
 ### Step 3:
 In Terminal, type `flask run`. You should see something like this: 
@@ -22,10 +23,22 @@ In Terminal, type `flask run`. You should see something like this:
 WARNING: Do not use the development server in a production environment.
 Use a production WSGI server instead.
  * Debug mode: off
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 
+ * Running on http://80.0.0.1:5000/ (Press CTRL+C to quit) 
 ```
+
+### Step 4:
+Open the browser linked in the above Terminal message. In the example above, you would go to the URL `http://80.0.0.1:5000/`.
 
 ## How To Use Safeplates
 
+### Step 1:
+Check all the dietary restrictions that apply to you.
 
+### Step 2:
+
+### Step 3:
+Enter your preferred radius of how close the suggested restaurants are to your inputted location.
+
+### Step 4: 
+Submit the form!
 
