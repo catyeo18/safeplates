@@ -59,16 +59,27 @@ def post_form():
       # parse the html using helper function and store in vcariable `soup`
       soup = returnSoup(link)
 
+      items = {}
       if "grubhub" in link:
-        print(soup.find_all("p"))
-        for j in soup.find_all("p"):
-          print(j)
+        
+        for item in soup.find_all("div", attrs={'class':'menuItemNew'}):
+          ingredients = item.find_next("p", attrs={'itemprop': 'description'}).text
+          name = item.find_next("h6", attrs={'class':'menuItem-name'}).text
+          items[ingredients] = name 
+          #if user_restrictions.isdisjoint(ingredientsSet):
+          #   print("hey")
+          #   print("You can eat" + item.find_next("h6", attrs={'class':'menuItem-name'}))
+          #   try:
+          #     restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
+          #   except:
           #print(j.text.strip.split)
           # if diet[0] not in i.text.strip.split:
           #   try:
           #     restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
           #   except:
           #     print(i)
+        for item in items:
+          print(items[item])
       if "seamless" in link:
         print("do something here")
     except:
