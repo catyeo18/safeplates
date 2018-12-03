@@ -42,11 +42,11 @@ def post_form():
 
   # Store dietary restrictions from form
   all_restrictions = ['vegetarian', 'soy', 'dairy', 'gluten', 'peanuts', 'beef', 'pork']
-  user_restrictions = set()
+  user_restrictions = []
   for checkbox in all_restrictions:
     value = request.form.get(checkbox)
     if value:
-        user_restrictions.add(checkbox)
+        user_restrictions.append(checkbox)
 
   # Access an URL
   restaurants = []
@@ -60,15 +60,11 @@ def post_form():
       soup = returnSoup(link)
 
       if "grubhub" in link:
-        #print(soup.find_all("p"))
-        for item in soup.find_all("div", attrs={'class': 'menuItemNew'}):
-          ingredients = item.find_next("p", attrs={'itemprop': 'description'}).text
-          ingredientsSet = set(ingredients.split)
-          print("User" + user_restrictions)
-          print("Ingredients" + ingredientsSet)
-          if user_restrictions.isdisjoint(ingredientsSet):
-            print("hey")
-            print("You can eat" + item.find_next("h6", attrs={'class':'menuItem-name'}))
+        print(soup.find_all("p"))
+        for j in soup.find_all("p"):
+          print(j)
+          #print(j.text.strip.split)
+          # if diet[0] not in i.text.strip.split:
           #   try:
           #     restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
           #   except:
