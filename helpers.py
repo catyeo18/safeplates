@@ -7,6 +7,7 @@ def returnSoup(link):
 
 	browser.get(link)
 	browser.implicitly_wait(30)
+	browser.close()
 
 	# parse the html using beautiful soup and store in variable `soup`
 	soup = BeautifulSoup(browser.page_source, 'html.parser')
