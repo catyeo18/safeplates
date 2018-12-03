@@ -35,6 +35,7 @@ Open the browser linked in the above Terminal message. In the example above, you
 Check all the dietary restrictions that apply to you.
 
 ### Step 2:
+Enter the location of where you would like to find restaurants. You could enter an address, city, or zip code. 
 
 ### Step 3:
 Enter your preferred radius of how close the suggested restaurants are to your inputted location.
