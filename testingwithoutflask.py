@@ -17,6 +17,7 @@ browser = webdriver.Chrome()
 #page = requests.get(link, timeout=5)
 browser.get(link)
 browser.implicitly_wait(30)
+browser.close()
 # parse the html using beautiful soup and store in variable `soup`
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 # print("Soup")
