@@ -33,6 +33,9 @@ The user begins by going to the form to which he/she can input dietary restricti
 #### Web Scraping
 We decided to use Selenium instead of other web scraping libraries like Requests because the sites we were scraping from rendered JavaScript, and only Selenium could handle dynamically loaded webpage content.
 
+#### Location
+Originally, we had desired to include geolocation. BUT tbc
+
 ### User Interface
 
 ### Files
