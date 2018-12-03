@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-from helpers import returnSoup
+from helpers import returnSoup, goodRestaurants
 
 app = Flask(__name__)
 
@@ -41,12 +41,19 @@ def post_form():
   # Return items
 
   # Store dietary restrictions from form
-  all_restrictions = ['vegetarian', 'soy', 'dairy', 'gluten', 'peanuts', 'beef', 'pork']
-  user_restrictions = []
+  all_restrictions = {
+   'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb"]),
+   'soy':set(["soy", "soya", "edamame", "shoyu", "tofu", "tempeh", "miso"]),
+   'dairy':set(["milk", "cheese", "cream", "cheddar", "brie", "parmesan", "butter", "lactose", "pudding", "dairy"]),
+   'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers"]),
+   'peanuts':set(["peanut", "peanuts"]),
+   'beef':set(["beef", "steak"]),
+   'pork':set(["pork","ham", "bacon","sausage"])}
+  user_restrictions = set()
   for checkbox in all_restrictions:
     value = request.form.get(checkbox)
     if value:
-        user_restrictions.append(checkbox)
+        user_restrictions = user_restrictions.union(all_restrictions[checkbox])
 
   # Access an URL
   restaurants = []
@@ -78,27 +85,24 @@ def post_form():
           #     restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
           #   except:
           #     print(i)
-        for item in items:
-          print(items[item])
+      restaurants.append((data['response']['groups'][0]['items'][i]['venue'], items))
       if "seamless" in link:
         print("do something here")
     except:
       print(i)
 
-
-
-  restaurants = []
   # Access address
-  for i in range(0, number_of_recs):
-    try:
-      restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
-    except:
-      print(i)
+  # for i in range(0, number_of_recs):
+  #   try:
+  #     restaurants.append(data['response']['groups'][0]['items'][i]['venue'])
+  #   except:
+  #     print(i)
 
 
 
   #return json.dumps(data)
-  return render_template("results.html", results=restaurants)
+  goodRestaurants(restaurants, user_restrictions)
+  return render_template("results.html", results=list(map(lambda x: x[0], restaurants)))
 
 
 if __name__ == '__main__':
