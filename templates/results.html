@@ -20,7 +20,11 @@
           <td> {{ result[0]["name"] }} </td>
           <td> {{ result[0]["location"]["address"] }}, {{ result[0]["location"]["city"] }}, {{ result[0]["location"]["state"] }} {{ result[0]["location"]["postalCode"] }} </td>
           <td> {{ result[0]["categories"][0]["shortName"] }} </td>
-          <td> {{ result[1] }} </td>
+          <td> <ul>
+            {% for item in result[1] %}
+              <li> {{ item }} </li>
+            {% endfor %}
+          </ul></td>
         </tr>
         {% endfor %}
 
