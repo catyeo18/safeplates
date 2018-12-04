@@ -25,9 +25,10 @@ def goodRestaurants(restaurants, user_restrictions):
 	for restaurant in restaurants:
 		safeItems = [restaurant[1][item] for item in restaurant[1] if safeFood(item, user_restrictions)]
 		# print(safeItems)
-		if safeItems:
+		if len(safeItems) >= 5:
 			# print(restaurant[0]["name"])
 			safeRestaurants.append((restaurant[0], safeItems))
+	safeRestaurants.sort(key= lambda x: len(x[1]))
 	# for restaurant in safeRestaurants:
 	# 		for item in restaurant[1]:
 	# 			print("You can eat " + item + " from " + restaurant[0]["name"])
