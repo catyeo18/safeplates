@@ -8,6 +8,8 @@ For individuals who have specific dietary restrictions, it is often difficult to
 
 ## How To Configure Safeplates
 
+Note: Please ensure you have Python and all the associated libraries used in this webapp (detailed more in DESIGN.md) installed.
+
 ### Step 1: 
 Clone this repository locally. 
 

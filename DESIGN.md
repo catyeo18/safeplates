@@ -18,6 +18,7 @@ This web app is built and hosted locally. It uses [Foursquare](https://developer
 * Flask
 * Selenium (for web scraping)
 * BeautifulSoup (for web scraping)
+* Headless (for web scraping)
 
 #### Front End
 * HTML
@@ -59,4 +60,5 @@ Originally, we had desired to include geolocation. BUT tbc
 * `app.py`: this file drives our Flask app and includes the logic necessary to run our web app.
 * `helpers.py`: this file includes the following helper functions, which are used in `app.py`:
   * `returnSoup(link)`: this function scrapes the web page of the inputted link and returns the HTML of that page.
-  * `goodRestaurants(restaurants, user_restrictions)`:
+  * `goodRestaurants(restaurants, user_restrictions)`: this function takes in 2 parameters: an array of restaurants and an array of the user's dietary restrictions. This function filters through the array of restaurants to return an array of only restaurants that satisfy the user's dietary restrictions.
+  * 
