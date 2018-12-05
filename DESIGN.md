@@ -55,11 +55,11 @@ Our goal in creating the UI was for SafePlates to be easy for the user to read a
 ### Files
 #### Front End
 * static
-  * `styles.css`: the CSS styling for our web app 
+  * `styles.css`: the CSS styling for our web app .
 * templates
-  * `form.html`: 
-  * `layout.html`: 
-  * `results.html`: 
+  * `form.html`: the HTML for our initial form. 
+  * `layout.html`: the HTML template `form.html` and `results.html` use.
+  * `results.html`: the HTML for our results page, showing a table of restaurant recommendations.
 
 #### Back End
 * `app.py`: this file drives our Flask app and includes the logic necessary to run our web app.
