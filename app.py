@@ -40,7 +40,7 @@ def post_form():
    'dairy':set(["milk", "cheese", "cream", "queso", "cheddar", "cheesy", "swiss", "creamy", "brie", "parmesan", "mozzarella", "pizza", "calzone", "butter", "lactose", "pudding", "dairy", "yogurt", "yoghurt"]),
    'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "ramen", "soba", "udon", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers", "sub", "wrap", "calzone", "cake", "toast", "sandwich", "pita", "soy sauce", "tortellini", "ravioli", "flour", "spaghetti", "linguine", "fettuccine", "penne", "panini"]),
    'peanuts':set(["peanut", "peanuts"]),
-   'beef':set(["beef", "steak", "pastrami", "salami"]),
+   'beef':set(["beef", "steak", "pastrami", "salami", "pepperoni", "prosciutto", "pancetta", "b.l.t", "blt"]),
    'pork':set(["pork", "ham", "bacon", "sausage", "pepperoni", "salami"])}
   
   # Store dietary restrictions from form in a set
