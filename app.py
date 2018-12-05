@@ -35,7 +35,7 @@ def post_form():
 
   # Dictionary of deitary restrictions
   all_restrictions = {
-   'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb", "pastrami", "salami", "shrimp", "fish", "seafood", "clam", "octopus", "squid", "mussel", "tuna", "salmon", "swordfish", "pepperoni", "prosciutto", "pancetta", "b.l.t", "blt", "anchovy", "anchovies", "burger", "carne", "carnitas", "barbacoa", "scallop", "lengua", "al pastor", "oyster", "pig", "intestine", "eel"]),
+   'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb", "pastrami", "salami", "shrimp", "fish", "seafood", "clam", "octopus", "squid", "mussel", "tuna", "salmon", "swordfish", "pepperoni", "prosciutto", "pancetta", "b.l.t", "blt", "anchovy", "anchovies", "burger", "carne", "carnitas", "barbacoa", "scallop", "lengua", "al pastor", "oyster", "pig", "intestine", "eel", "buffalo"]),
    'soy':set(["soy", "soya", "edamame", "shoyu", "tofu", "tempeh", "miso"]),
    'dairy':set(["milk", "cheese", "cream", "queso", "cheddar", "cheesy", "swiss", "creamy", "brie", "parmesan", "mozzarella", "pizza", "calzone", "butter", "lactose", "pudding", "dairy", "yogurt", "yoghurt"]),
    'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "ramen", "soba", "udon", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers", "sub", "wrap", "calzone", "cake", "toast", "sandwich", "pita", "soy sauce", "tortellini", "ravioli", "flour", "spaghetti", "linguine", "fettuccine", "penne", "panini"]),
