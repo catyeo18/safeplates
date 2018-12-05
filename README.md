@@ -18,6 +18,9 @@ In Terminal, enter the directory to which this repository is cloned.
 Then, enter the directory `safeplates`.
 
 ### Step 3:
+In Terminal, type `export FLASK_APP=app.py`.
+
+### Step 4:
 In Terminal, type `flask run`. You should see something like this: 
 
 ```
@@ -28,7 +31,7 @@ Use a production WSGI server instead.
  * Running on http://80.0.0.1:5000/ (Press CTRL+C to quit) 
 ```
 
-### Step 4:
+### Step 5:
 Open the browser linked in the above Terminal message. In the example above, you would go to the URL `http://80.0.0.1:5000/`.
 
 ## How To Use Safeplates
