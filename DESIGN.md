@@ -33,7 +33,7 @@ Then, the user clicks the 'Submit' button to submit the form. Once that happens,
 
 We iterate through that list of restaurants to look for the URLs of the restaurants' menus. Once the URL is found, the HTML is parsed and returned using the helper function `returnSoup` in `helpers.py`, which utilizes Beautiful Soup, Headless, and Selenium to scrape the webpage. Now, we look for specific HTML tags/attributes within that block of scraped HTML. Every menu item is embedded within HTML tags with class `menuItem-name`, so we iterate through the menu items to store its ingredients, which all have `itemprop` labelled with `description`, in a dictionary `items` with the key being the menu item name and the value being its ingredients. We append a tuple of the restaurant's info grabbed from Foursquare's API with `items`.
 
-TO BE CONTINUED
+
 
 ### Design Decisions
 
@@ -50,7 +50,10 @@ Beautiful Soup is a Python package that could parse HTML and XML files, so we in
 Originally, we had desired to include geolocation. However, we soon realized that a user might want to research the best restaurants to go to in an area he/she is unfamiliar with ahead of time, so we chose to allow the user to manually input the location instead.
 
 ### User Interface
-Our goal in creating the UI was for SafePlates to be easy for the user to read and use, so our design is simple???? TO BE CONTINUED/AXED
+Our goal in creating the UI was for SafePlates to be easy for the user to read and use.
+
+What our form looks like:
+![form](https://i.imgur.com/JTDntZO.png)
 
 ### Files
 #### Front End
