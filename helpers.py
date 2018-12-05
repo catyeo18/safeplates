@@ -39,6 +39,6 @@ def goodRestaurants(restaurants, user_restrictions):
 
 	return safeRestaurants
 		
-# Function to return if a menu item is in the user's dietary restrictions
+# Function to return whether a menu item is in the user's dietary restrictions
 def safeFood(item, user_restrictions):
 	return reduce(lambda x, y: x and (y not in item.lower()), user_restrictions, True)
