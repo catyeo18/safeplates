@@ -27,7 +27,7 @@ This web app is built and hosted locally. It uses [Foursquare](https://developer
 * Jinja
 
 ### Detailed Walkthrough
-The user begins by going to the form to which he/she can input dietary restrictions, location, and preferred radius. The dietary restrictions are selected through a list of checkboxes, so the user can check all that apply. The location input can take in an address, city, and/or zip code. 
+The user begins by going to the form to which he/she can input dietary restrictions, location, and preferred radius. The dietary restrictions are selected through a list of checkboxes, so the user can check all that apply. The location input can take in an address, city, and/or zip code. Our JavaScript code in `form.html` ensures that the user must fill out both the location and preferred restaurant proximity.
 
 Then, the user clicks the 'Submit' button to submit the form. Once that happens, the web app uses the inputted location and radius to access a list of restaurants given by Foursquare's API in JSON. The API provides us with information like name, cuisine, address, menu link, etc. It also stores the user's dietary restrictions in a set.
 
@@ -65,4 +65,4 @@ Originally, we had desired to include geolocation. BUT tbc
 * `helpers.py`: this file includes the following helper functions, which are used in `app.py`:
   * `returnSoup(link)`: this function scrapes the web page of the inputted link and returns the HTML of that page.
   * `goodRestaurants(restaurants, user_restrictions)`: this function takes in 2 parameters: an array of restaurants and an array of the user's dietary restrictions. This function filters through the array of restaurants to return an array of only restaurants that satisfy the user's dietary restrictions.
-  * 
+  * `safeFood(item, user_restrictions)`: this function returns whether a menu item is in the user's dietary restrictions
