@@ -6,27 +6,32 @@
         <p> Created by: Catherine Yeo, Hannah Cole || 2018 CS50 Final Project  </p>
     </div>
 
-    <h4 class="mb-3">Here are some restaurants you might like to try! </h4>
+    {% if results %}
+      <h4 class="mb-3">Here are some restaurants you might like to try! </h4>
 
-    <table style="width:100%">
-        <tr>
-          <th> Restaurant </th>
-          <th> Address </th>
-          <th> Cuisine </th>
-          <th> Suitable Menu Items </th>
-        </tr>
-        {% for result in results %}
-        <tr>
-          <td> {{ result[0]["name"] }} </td>
-          <td> {{ result[0]["location"]["address"] }}, {{ result[0]["location"]["city"] }}, {{ result[0]["location"]["state"] }} {{ result[0]["location"]["postalCode"] }} </td>
-          <td> {{ result[0]["categories"][0]["shortName"] }} </td>
-          <td> <ul>
-            {% for item in range(0, 5) %}
-              <li> {{ result[1][item] }} </li>
-            {% endfor %}
-          </ul></td>
-        </tr>
-        {% endfor %}
+      <table style="width:100%">
+          <tr>
+            <th> Restaurant </th>
+            <th> Address </th>
+            <th> Cuisine </th>
+            <th> Featured Items </th>
+          </tr>
+          {% for result in results %}
+            <tr>
+              <td> {{ result[0]["name"] }} </td>
+              <td> {{ result[0]["location"]["address"] }}, {{ result[0]["location"]["city"] }}, {{ result[0]["location"]["state"] }} {{ result[0]["location"]["postalCode"] }} </td>
+              <td> {{ result[0]["categories"][0]["shortName"] }} </td>
+              <td> <ul>
+                {% for item in range(0, 5) %}
+                  <li> {{ result[1][item] }} </li>
+                {% endfor %}
+              </ul></td>
+            </tr>
+          {% endfor %}
+
+      {% else %}
+        <h2>Sorry, no results found. Maybe try a larger radius?</h2>
+      {% endif %}
 
 
        

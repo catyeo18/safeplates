@@ -16,7 +16,7 @@ def get_form():
 
 @app.route("/form", methods=["POST"])
 def post_form():
-  number_of_recs = 10
+  number_of_recs = 20
 
   # Access data from FourSquare's API
   params = dict(
@@ -35,10 +35,10 @@ def post_form():
 
   # Dictionary of deitary restrictions
   all_restrictions = {
-   'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb", "pastrami", "salami", "shrimp", "fish", "seafood", "clam", "octopus", "squid", "mussel", "tuna", "salmon", "swordfish", "pepperoni", "prosciutto", "pancetta", "b.l.t", "blt", "anchovy", "anchovies", "burger", "carne", "carnitas", "barbacoa", "scallop"]),
+   'vegetarian':set(["meat", "chicken", "beef", "pork", "ham", "wings", "veal", "venison", "ham", "hot dog", "sausage", "steak", "turkey", "lamb", "pastrami", "salami", "shrimp", "fish", "seafood", "clam", "octopus", "squid", "mussel", "tuna", "salmon", "swordfish", "pepperoni", "prosciutto", "pancetta", "b.l.t", "blt", "anchovy", "anchovies", "burger", "carne", "carnitas", "barbacoa", "scallop", "lengua", "al pastor", "oyster", "pig", "intestine", "eel"]),
    'soy':set(["soy", "soya", "edamame", "shoyu", "tofu", "tempeh", "miso"]),
    'dairy':set(["milk", "cheese", "cream", "queso", "cheddar", "cheesy", "swiss", "creamy", "brie", "parmesan", "mozzarella", "pizza", "calzone", "butter", "lactose", "pudding", "dairy", "yogurt", "yoghurt"]),
-   'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers", "sub", "wrap", "calzone"]),
+   'gluten':set(["gluten", "wheat", "barley", "bread", "roll", "bun", "pizza", "ramen", "soba", "udon", "pasta", "rye", "beer", "ale", "lager", "cookie", "crackers", "sub", "wrap", "calzone", "cake", "toast", "sandwich", "pita", "soy sauce", "tortellini", "ravioli", "flour", "spaghetti", "linguine", "fettuccine", "penne", "panini"]),
    'peanuts':set(["peanut", "peanuts"]),
    'beef':set(["beef", "steak", "pastrami", "salami"]),
    'pork':set(["pork", "ham", "bacon", "sausage", "pepperoni", "salami"])}
@@ -75,7 +75,7 @@ def post_form():
       restaurants.append((data['response']['groups'][0]['items'][i]['venue'], items))
 
     except:
-      print(i)
+      pass
 
   # Call helper function to filter through which restaurants have items that satisfy 
   # user's dietary restrictions

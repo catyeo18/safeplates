@@ -5,7 +5,6 @@ from functools import reduce
 # Function to scrape HTML from a webpage
 # Parameters: a URL string
 def returnSoup(link):
-	print("Entered function")
 	
 	options = webdriver.ChromeOptions()
 	options.add_argument('headless')
