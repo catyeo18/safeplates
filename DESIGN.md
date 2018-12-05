@@ -47,9 +47,10 @@ We decided to use Flask because it integrated well with Python and was a more fa
 Beautiful Soup is a Python package that could parse HTML and XML files, so we integrated it for our web scraping purposes. We decided to use Selenium instead of other libraries like Requests because the sites we were scraping from rendered JavaScript, and only Selenium could handle dynamically loaded webpage content.  We experimented with ChromeDriver before switching to Headless because we did not need a visible browser UI every time we tested our app.
 
 #### Location
-Originally, we had desired to include geolocation. BUT tbc
+Originally, we had desired to include geolocation. However, we soon realized that a user might want to research the best restaurants to go to in an area he/she is unfamiliar with ahead of time, so we chose to allow the user to manually input the location instead.
 
 ### User Interface
+Our goal in creating the UI was for SafePlates to be easy for the user to read and use, so our design is simple???? TO BE CONTINUED/AXED
 
 ### Files
 #### Front End
@@ -65,4 +66,4 @@ Originally, we had desired to include geolocation. BUT tbc
 * `helpers.py`: this file includes the following helper functions, which are used in `app.py`:
   * `returnSoup(link)`: this function scrapes the web page of the inputted link and returns the HTML of that page.
   * `goodRestaurants(restaurants, user_restrictions)`: this function takes in 2 parameters: an array of restaurants and an array of the user's dietary restrictions. This function filters through the array of restaurants to return an array of only restaurants that satisfy the user's dietary restrictions.
-  * `safeFood(item, user_restrictions)`: this function returns whether a menu item is in the user's dietary restrictions
+  * `safeFood(item, user_restrictions)`: this function returns whether a menu item is in the user's dietary restrictions.
