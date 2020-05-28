@@ -48,3 +48,4 @@ Enter your preferred radius of how close the suggested restaurants are to your i
 ### Step 4: 
 Submit the form!
 
+![](safeplates-screenshot.png)
